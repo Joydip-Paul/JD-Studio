@@ -1,0 +1,8 @@
+@if (visible) {
+  <div class="loader" aria-label="Loading JD Studio">
+    <div class="loader__top"><span>NS / 26</span><span>Digital fashion house</span></div>
+    <div class="loader__brand">JD'S<span>STUDIO</span></div>
+    <div class="loader__bottom"><span>Loading the archive...</span><strong>{{ progress }}%</strong></div>
+    <div class="loader__line"><i [style.width.%]="progress"></i></div>
+  </div>
+}

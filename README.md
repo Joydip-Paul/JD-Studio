@@ -1,27 +1,227 @@
-# StyleStory
+# JD Studio — Digital Fashion House
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+![JD Studio Preview](./src/assets/images/preview.png)
 
-## Development server
+## ✦ About The Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**JD Studio** is a luxury fashion agency website concept built as an immersive digital experience.
 
-## Code scaffolding
+The goal was to create more than a traditional fashion website — a visual identity platform that combines editorial fashion, brutalist design principles, and modern web animation.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Inspired by high-end fashion houses, creative studios, and award-winning digital experiences, JD Studio focuses on storytelling, typography, motion, and visual interaction.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✦ Design Philosophy
 
-## Running unit tests
+### Neo Brutalism × Editorial Fashion × Bento Grid
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The website combines:
 
-## Running end-to-end tests
+- Bold typography
+- High contrast layouts
+- Asymmetric composition
+- Experimental UI elements
+- Luxury editorial aesthetics
+- Smooth cinematic animations
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The design intentionally avoids traditional ecommerce layouts and creates a digital fashion experience.
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# ✦ Features
+
+## Landing Experience
+
+- Animated loading screen
+- Full-screen fashion hero section
+- Large editorial typography
+- Smooth entrance animations
+- Custom cursor interaction
+
+
+## Fashion Collections
+
+- Bento grid based gallery
+- Collection storytelling
+- Interactive cards
+- Image hover effects
+- Dynamic transitions
+
+
+## Digital Runway
+
+- Scroll-based storytelling
+- Cinematic image transitions
+- Immersive fashion presentation
+
+
+## Fashion Archive
+
+- Timeline-based collection history
+- Editorial magazine layout
+- Interactive archive browsing
+
+
+## Studio Experience
+
+- Creative process showcase
+- Team presentation
+- Brand philosophy section
+
+
+## Additional Interactions
+
+- Smooth scrolling
+- Page transitions
+- Responsive navigation
+- Micro animations
+- Custom UI components
+
+---
+
+# ✦ Technology Stack
+
+## Frontend
+
+- Angular 22
+- TypeScript
+- SCSS
+- HTML5
+
+
+## Animation & Experience
+
+- GSAP
+- GSAP ScrollTrigger
+- Lenis Smooth Scroll
+- Angular Animations
+
+
+## Development Tools
+
+- Angular CLI
+- Git
+- VS Code
+
+---
+
+# ✦ Project Structure
+
+```
+src/
+│
+├── app/
+│   │
+│   ├── components/
+│   │   ├── navbar/
+│   │   ├── footer/
+│   │   ├── cursor/
+│   │   ├── brutal-card/
+│   │   └── loading-screen/
+│   │
+│   ├── pages/
+│   │   ├── home/
+│   │   ├── collections/
+│   │   ├── studio/
+│   │   ├── runway/
+│   │   ├── archive/
+│   │   ├── journal/
+│   │   └── contact/
+│   │
+│   └── services/
+│       └── animation.service.ts
+│
+├── assets/
+│   └── images/
+│
+└── styles.scss
+```
+
+---
+
+# ✦ Pages
+
+| Page | Description |
+|---|---|
+| Home | Brand introduction and visual statement |
+| Collections | Fashion collections showcase |
+| Collection Detail | Individual collection storytelling |
+| Studio | Creative identity and process |
+| Runway | Digital fashion experience |
+| Archive | Previous collections timeline |
+| Journal | Fashion articles and stories |
+| Contact | Collaboration and communication |
+
+---
+
+# ✦ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/jd-studio.git
+```
+
+Navigate to project:
+
+```bash
+cd jd-studio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+ng serve
+```
+
+Open:
+
+```
+http://localhost:4200
+```
+
+---
+
+# ✦ Development Goals
+
+This project was created to explore:
+
+- Creative frontend development
+- Modern UI/UX principles
+- Animation-driven storytelling
+- Luxury brand experiences
+- Advanced Angular architecture
+
+---
+
+# ✦ Future Improvements
+
+- Add Three.js 3D fashion elements
+- Add virtual runway experience
+- Add CMS integration
+- Add AI fashion recommendation system
+- Add WebGL visual effects
+
+---
+
+# ✦ Credits
+
+Designed & Developed by **JD Studio**
+
+Built with passion for:
+
+**Design × Technology × Fashion**
+
+---
+
+## License
+
+This project is created for educational and portfolio purposes.
+All images used are placeholders and belong to their respective owners.

@@ -1,0 +1,210 @@
+<main>
+  <section class="hero" id="home">
+    <div class="hero__grain"></div>
+    <div class="hero__image image-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=2200&q=90"
+        alt="Editorial portrait from the JD Studio collection"
+      />
+    </div>
+    <div class="hero__meta">
+      <span>Independent fashion agency</span
+      ><span>Paris / New York / Everywhere</span
+      ><span>Scroll to explore ↓</span>
+    </div>
+    <div class="hero__title">
+      <p class="eyebrow">A DIGITAL FASHION HOUSE <b>·</b> EST. 2018</p>
+      <h1>
+        We don't follow<br /><em>trends.</em><br />We create futures<span
+          >.</span
+        >
+      </h1>
+    </div>
+    <div class="hero__footer">
+      <p>
+        JD STUDIO<br /><span
+          >Contemporary identities for a changing world.</span
+        >
+      </p>
+      <a
+        class="circle-button"
+        routerLink="/archive"
+        aria-label="View collection"
+        >↘</a
+      >
+    </div>
+    <div class="hero__stamp">NS<br /><b>26</b></div>
+  </section>
+
+  <section class="manifesto section-pad">
+    <div class="section-label">
+      <span>01 / Manifesto</span><span>Our point of view</span>
+    </div>
+    <div class="manifesto__body">
+      <p class="display-copy">
+        We design <em>identities,</em><br />not clothes.
+      </p>
+      <p class="body-copy">
+        JD is an independent fashion agency for the people who move culture
+        forward. We build worlds where craft meets technology, and where every
+        detail has a pulse.
+      </p>
+    </div>
+    <div class="manifesto__mark">✳</div>
+  </section>
+
+  <section class="collections section-pad">
+    <div class="section-label">
+      <span>02 / Selected works</span><span>04 objects</span>
+    </div>
+    <div class="section-heading">
+      <h2>The<br /><em>Archive</em></h2>
+      <a class="text-button" routerLink="/archive"
+        >View all projects <span>↗</span></a
+      >
+    </div>
+    <div class="collection-grid">
+      @for (item of collections; track item.number) {
+        <article class="collection-card" [class]="item.className">
+          <div class="collection-card__image">
+            <img
+              [src]="item.image"
+              [alt]="item.name + ' fashion editorial'"
+              loading="lazy"
+            /><span class="collection-card__index">{{ item.number }}</span
+            ><span class="collection-card__plus">+</span>
+          </div>
+          <div class="collection-card__info">
+            <div>
+              <span>{{ item.type }}</span>
+              <h3>{{ item.name }}</h3>
+            </div>
+            <span>{{ item.year }}</span>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="runway">
+    <div class="runway__image">
+      <img
+        src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2200&q=90"
+        alt="Model walking a dramatic runway"
+        loading="lazy"
+      />
+    </div>
+    <div class="runway__overlay">
+      <span class="eyebrow">03 / The digital runway</span>
+      <h2>Motion<br />becomes<br /><em>memory.</em></h2>
+      <a
+        class="circle-button circle-button--light"
+        routerLink="/journal"
+        aria-label="Read journal"
+        >↘</a
+      >
+    </div>
+    <div class="runway__ticker">
+      <span>JD / RUNWAY 026</span><span>JD / RUNWAY 026</span
+      ><span>JD / RUNWAY 026</span>
+    </div>
+  </section>
+
+  <section class="studio section-pad">
+    <div class="section-label">
+      <span>04 / Behind the vision</span><span>How we work</span>
+    </div>
+    <div class="studio__intro">
+      <h2>Quietly<br /><em>radical.</em></h2>
+      <p>
+        We are a small studio with an expansive point of view. From first sketch
+        to final frame, we make the invisible feel inevitable.
+      </p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card process-card--large">
+        <span>01</span>
+        <h3>Research</h3>
+        <p>We listen to the culture before we make a move.</p>
+      </div>
+      <div class="process-card">
+        <span>02</span>
+        <h3>Concept</h3>
+        <p>Ideas with a point of view, never just a moodboard.</p>
+      </div>
+      <div class="process-card process-card--accent">
+        <span>03</span>
+        <h3>Design</h3>
+        <p>Form, material, image. Every choice earns its place.</p>
+      </div>
+      <div class="process-card">
+        <span>04</span>
+        <h3>Production</h3>
+        <p>Making the future tangible, down to the last stitch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="journal section-pad">
+    <div class="section-label">
+      <span>05 / Dispatches</span><span>From the journal</span>
+    </div>
+    <div class="section-heading">
+      <h2>Field<br /><em>notes.</em></h2>
+      <a class="text-button" routerLink="/journal"
+        >Enter the journal <span>↗</span></a
+      >
+    </div>
+    <div class="journal-grid">
+      @for (article of journal; track article.category) {
+        <article class="journal-card">
+          <div class="journal-card__image">
+            <img [src]="article.image" [alt]="article.title" loading="lazy" />
+          </div>
+          <span>{{ article.category }}</span>
+          <h3>{{ article.title }}</h3>
+          <a routerLink="/journal">Read story ↗</a>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="timeline section-pad">
+    <div class="section-label">
+      <span>06 / The timeline</span><span>2018 — ∞</span>
+    </div>
+    <div class="timeline__heading">
+      <p class="eyebrow">A living archive</p>
+      <h2>Past informs<br /><em>possible.</em></h2>
+    </div>
+    <div class="timeline__track">
+      <div class="timeline__item">
+        <b>2018</b><span>THE BEGINNING</span>
+        <p>JD Studio is born between Paris and New York.</p>
+      </div>
+      <div class="timeline__item">
+        <b>2022</b><span>OBJECT / 001</span>
+        <p>The first physical collection meets the digital world.</p>
+      </div>
+      <div class="timeline__item timeline__item--current">
+        <b>2026</b><span>MONOCHROME FUTURE</span>
+        <p>Our newest collection. Available in the archive now.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact__texture"></div>
+    <div class="section-label">
+      <span>07 / New business</span><span>Let's make a mark</span>
+    </div>
+    <h2>Let's create<br /><em>something</em><br />iconic<span>.</span></h2>
+    <a class="contact__mail" routerLink="/contact"
+      >hello@jd.studio <span>↗</span></a
+    >
+    <div class="contact__footer">
+      <span>© 2026 JD STUDIO</span><span>Paris · New York · Worldwide</span
+      ><span>Instagram&nbsp;&nbsp; Are.na&nbsp;&nbsp; LinkedIn</span>
+    </div>
+  </section>
+</main>

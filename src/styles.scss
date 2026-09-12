@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background: #f1eee8;
+    font-family: Manrope, sans-serif;
+}
+body,
+button {
+    -webkit-font-smoothing: antialiased;
+}
+button {
+    font-family: inherit;
+}
+::selection {
+    background: #d7ff3f;
+    color: #171717;
+}

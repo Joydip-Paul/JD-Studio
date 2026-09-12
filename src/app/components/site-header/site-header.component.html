@@ -1,0 +1,44 @@
+<header class="nav">
+  <a
+    class="wordmark"
+    routerLink="/"
+    (click)="closeMenu()"
+    aria-label="JD Studio home"
+    >JD<span>/</span>STUDIO</a
+  >
+  <nav
+    class="nav__links"
+    [class.nav__links--open]="menuOpen"
+    aria-label="Main navigation"
+  >
+    <a routerLink="/archive" routerLinkActive="is-active" (click)="closeMenu()"
+      >Archive</a
+    >
+    <a routerLink="/studio" routerLinkActive="is-active" (click)="closeMenu()"
+      >Studio</a
+    >
+    <a routerLink="/journal" routerLinkActive="is-active" (click)="closeMenu()"
+      >Journal</a
+    >
+    <a routerLink="/contact" routerLinkActive="is-active" (click)="closeMenu()"
+      >Contact</a
+    >
+  </nav>
+  <div class="nav__actions">
+    <button
+      class="theme-switch"
+      (click)="themeChange.emit()"
+      [attr.aria-label]="isDark ? 'Use light theme' : 'Use dark theme'"
+    >
+      <span></span><small>{{ isDark ? "DAY" : "NIGHT" }}</small>
+    </button>
+    <button
+      class="menu-toggle"
+      (click)="menuChange.emit(!menuOpen)"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Toggle menu"
+    >
+      <i></i><i></i>
+    </button>
+  </div>
+</header>
