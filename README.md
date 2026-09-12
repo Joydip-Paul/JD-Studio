@@ -1,6 +1,6 @@
 # JD Studio — Digital Fashion House
 
-![JD Studio Preview](./src/assets/images/preview.png)
+<!-- ![JD Studio Preview](./src/assets/images/preview.png) -->
 
 ## ✦ About The Project
 
@@ -160,7 +160,7 @@ src/
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/jd-studio.git
+git clone https://github.com/Joydip-Paul/JD-Studio
 ```
 
 Navigate to project:
@@ -213,7 +213,7 @@ This project was created to explore:
 
 # ✦ Credits
 
-Designed & Developed by **JD Studio**
+Designed & Developed by **Joydip Paul**
 
 Built with passion for:
 
