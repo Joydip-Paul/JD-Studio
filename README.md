@@ -1,227 +1,87 @@
-# JD Studio — Digital Fashion House
+# JD Studio - Digital Fashion House
 
-<!-- ![JD Studio Preview](./src/assets/images/preview.png) -->
+JD Studio is an editorial fashion agency website concept built as an immersive digital experience. It combines neo-brutalist structure, luxury magazine typography, asymmetric layouts, bento-inspired collections, and cinematic motion.
 
-## ✦ About The Project
+## Features
 
-**JD Studio** is a luxury fashion agency website concept built as an immersive digital experience.
+- Animated archive loading screen
+- Editorial full-screen hero and runway sections
+- Responsive navigation with mobile menu
+- Light/dark theme toggle
+- Custom cursor on pointer devices
+- GSAP and ScrollTrigger reveal animations
+- Lenis smooth scrolling
+- Route-backed Archive, Studio, Journal, Contact, and 404 pages
+- Responsive layouts for desktop, tablet, and mobile
+- External Unsplash editorial imagery that can be replaced with local assets later
 
-The goal was to create more than a traditional fashion website — a visual identity platform that combines editorial fashion, brutalist design principles, and modern web animation.
-
-Inspired by high-end fashion houses, creative studios, and award-winning digital experiences, JD Studio focuses on storytelling, typography, motion, and visual interaction.
-
----
-
-## ✦ Design Philosophy
-
-### Neo Brutalism × Editorial Fashion × Bento Grid
-
-The website combines:
-
-- Bold typography
-- High contrast layouts
-- Asymmetric composition
-- Experimental UI elements
-- Luxury editorial aesthetics
-- Smooth cinematic animations
-
-The design intentionally avoids traditional ecommerce layouts and creates a digital fashion experience.
-
----
-
-# ✦ Features
-
-## Landing Experience
-
-- Animated loading screen
-- Full-screen fashion hero section
-- Large editorial typography
-- Smooth entrance animations
-- Custom cursor interaction
-
-
-## Fashion Collections
-
-- Bento grid based gallery
-- Collection storytelling
-- Interactive cards
-- Image hover effects
-- Dynamic transitions
-
-
-## Digital Runway
-
-- Scroll-based storytelling
-- Cinematic image transitions
-- Immersive fashion presentation
-
-
-## Fashion Archive
-
-- Timeline-based collection history
-- Editorial magazine layout
-- Interactive archive browsing
-
-
-## Studio Experience
-
-- Creative process showcase
-- Team presentation
-- Brand philosophy section
-
-
-## Additional Interactions
-
-- Smooth scrolling
-- Page transitions
-- Responsive navigation
-- Micro animations
-- Custom UI components
-
----
-
-# ✦ Technology Stack
-
-## Frontend
+## Technology
 
 - Angular 22
-- TypeScript
+- TypeScript 6
 - SCSS
-- HTML5
+- GSAP and ScrollTrigger
+- Lenis
+- Angular Router
+- Karma and Jasmine
 
+## Project Structure
 
-## Animation & Experience
-
-- GSAP
-- GSAP ScrollTrigger
-- Lenis Smooth Scroll
-- Angular Animations
-
-
-## Development Tools
-
-- Angular CLI
-- Git
-- VS Code
-
----
-
-# ✦ Project Structure
-
-```
+```text
 src/
-│
 ├── app/
-│   │
 │   ├── components/
-│   │   ├── navbar/
-│   │   ├── footer/
-│   │   ├── cursor/
-│   │   ├── brutal-card/
-│   │   └── loading-screen/
-│   │
+│   │   ├── loading-screen/
+│   │   └── site-header/
 │   ├── pages/
 │   │   ├── home/
-│   │   ├── collections/
-│   │   ├── studio/
-│   │   ├── runway/
-│   │   ├── archive/
-│   │   ├── journal/
-│   │   └── contact/
-│   │
-│   └── services/
-│       └── animation.service.ts
-│
+│   │   ├── inner-page/
+│   │   └── not-found/
+│   ├── app.component.html
+│   ├── app.component.scss
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   ├── app.config.ts
+│   └── app.routes.ts
 ├── assets/
-│   └── images/
-│
+├── index.html
+├── main.ts
 └── styles.scss
 ```
 
----
+## Routes
 
-# ✦ Pages
+| Route | Purpose |
+| --- | --- |
+| `/` | Home experience and selected work |
+| `/archive` | Collection archive story |
+| `/studio` | Studio philosophy and process |
+| `/journal` | Fashion journal editorial page |
+| `/contact` | New business contact page |
+| Any unknown route | Custom 404 archive page |
 
-| Page | Description |
-|---|---|
-| Home | Brand introduction and visual statement |
-| Collections | Fashion collections showcase |
-| Collection Detail | Individual collection storytelling |
-| Studio | Creative identity and process |
-| Runway | Digital fashion experience |
-| Archive | Previous collections timeline |
-| Journal | Fashion articles and stories |
-| Contact | Collaboration and communication |
+## Setup
 
----
-
-# ✦ Installation & Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Joydip-Paul/JD-Studio
-```
-
-Navigate to project:
-
-```bash
-cd jd-studio
-```
-
-Install dependencies:
+Angular 22 currently requires a recent Node 22 release. Use Node `22.22.3` or newer within the Node 22 line.
 
 ```bash
 npm install
+npm start
 ```
 
-Run development server:
+Open `http://localhost:4200` in a browser.
+
+## Verification
 
 ```bash
-ng serve
+npm run build
+npm test -- --watch=false --browsers=ChromeHeadless
 ```
 
-Open:
+The project uses remote Unsplash images as temporary editorial assets. Confirm network access before presenting the site in an offline environment, or download approved assets into `src/assets/` and update the page data.
 
-```
-http://localhost:4200
-```
+## Credits
 
----
+Designed and developed by Joydip Paul.
 
-# ✦ Development Goals
-
-This project was created to explore:
-
-- Creative frontend development
-- Modern UI/UX principles
-- Animation-driven storytelling
-- Luxury brand experiences
-- Advanced Angular architecture
-
----
-
-# ✦ Future Improvements
-
-- Add Three.js 3D fashion elements
-- Add virtual runway experience
-- Add CMS integration
-- Add AI fashion recommendation system
-- Add WebGL visual effects
-
----
-
-# ✦ Credits
-
-Designed & Developed by **Joydip Paul**
-
-Built with passion for:
-
-**Design × Technology × Fashion**
-
----
-
-## License
-
-This project is created for educational and portfolio purposes.
-All images used are placeholders and belong to their respective owners.
+This is an educational and portfolio concept. Images are temporary placeholders and remain the property of their respective owners.

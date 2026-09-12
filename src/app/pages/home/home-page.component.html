@@ -65,7 +65,7 @@
     </div>
     <div class="collection-grid">
       @for (item of collections; track item.number) {
-        <article class="collection-card" [class]="item.className">
+        <a class="collection-card" [class]="item.className" routerLink="/archive" [queryParams]="{ collection: item.number }" [attr.aria-label]="'Open ' + item.name + ' collection'">
           <div class="collection-card__image">
             <img
               [src]="item.image"
@@ -81,7 +81,7 @@
             </div>
             <span>{{ item.year }}</span>
           </div>
-        </article>
+        </a>
       }
     </div>
   </section>

@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.wordmark')?.textContent).toContain('JD STUDIO');
+    expect(compiled.querySelector('.wordmark')?.textContent).toContain('JD/STUDIO');
   });
 });
