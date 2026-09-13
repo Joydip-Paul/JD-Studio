@@ -1,14 +1,65 @@
 <main class="collection-detail">
   <section class="collection-detail__hero">
-    <div class="section-label"><span>Collection / {{ collection.season }}</span><span>JD Studio / 2026</span></div>
-    <div class="collection-detail__hero-copy"><p class="eyebrow">A study in movement</p><h1>{{ collection.name }}</h1><p>{{ collection.concept }}</p></div>
-    <div class="collection-detail__hero-image" data-cursor="VIEW"><img [src]="collection.hero" [alt]="collection.name + ' campaign'" fetchpriority="high"></div>
+    <div class="section-label">
+      <span>Collection / {{ collection.season }}</span
+      ><span>JD Studio / 2026</span>
+    </div>
+    <div class="collection-detail__hero-copy">
+      <p class="eyebrow">A study in movement</p>
+      <h1>{{ collection.name }}</h1>
+      <p>{{ collection.concept }}</p>
+    </div>
+    <div class="collection-detail__hero-image" data-cursor="VIEW">
+      <img
+        [src]="collection.hero"
+        [alt]="collection.name + ' campaign'"
+        fetchpriority="high"
+      />
+    </div>
   </section>
 
-  <section class="collection-detail__concept section-pad"><div class="section-label"><span>01 / Concept</span><span>Designer notes</span></div><div class="collection-detail__concept-grid"><p class="display-copy">Form follows<br><em>feeling.</em></p><p>{{ collection.notes }}</p></div></section>
+  <section class="collection-detail__concept section-pad">
+    <div class="section-label">
+      <span>01 / Concept</span><span>Designer notes</span>
+    </div>
+    <div class="collection-detail__concept-grid">
+      <p class="display-copy">Form follows<br /><em>feeling.</em></p>
+      <p>{{ collection.notes }}</p>
+    </div>
+  </section>
 
-  <section class="collection-detail__gallery"><div class="collection-detail__gallery-item"><img [src]="collection.gallery[0]" alt="Collection editorial look" loading="lazy"><span>02 / Silhouette</span></div><div class="collection-detail__gallery-item collection-detail__gallery-item--offset"><img [src]="collection.gallery[1]" alt="Collection material detail" loading="lazy"><span>03 / Texture</span></div></section>
+  <section class="collection-detail__gallery">
+    <div class="collection-detail__gallery-item">
+      <img
+        [src]="collection.gallery[0]"
+        alt="Collection editorial look"
+        loading="lazy"
+      /><span>02 / Silhouette</span>
+    </div>
+    <div
+      class="collection-detail__gallery-item collection-detail__gallery-item--offset"
+    >
+      <img
+        [src]="collection.gallery[1]"
+        alt="Collection material detail"
+        loading="lazy"
+      /><span>03 / Texture</span>
+    </div>
+  </section>
 
-  <section class="collection-detail__materials section-pad"><div class="section-label"><span>04 / Materials</span><span>Craft / Process</span></div><div class="collection-detail__materials-grid"><h2>Made to<br><em>remain.</em></h2><p>{{ collection.materials }}</p></div></section>
-  <section class="collection-detail__footer"><p>End of object</p><a class="text-button" routerLink="/archive">Back to archive <span>↗</span></a></section>
+  <section class="collection-detail__materials section-pad">
+    <div class="section-label">
+      <span>04 / Materials</span><span>Craft / Process</span>
+    </div>
+    <div class="collection-detail__materials-grid">
+      <h2>Made to<br /><em>remain.</em></h2>
+      <p>{{ collection.materials }}</p>
+    </div>
+  </section>
+  <section class="collection-detail__footer">
+    <p>End of object</p>
+    <a class="text-button" routerLink="/archive"
+      >Back to archive <span>↗</span></a
+    >
+  </section>
 </main>
