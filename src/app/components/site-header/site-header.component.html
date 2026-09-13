@@ -1,8 +1,8 @@
-<header class="nav">
+<header class="nav" [class.nav--link-clicked]="linkClicked" [class.nav--menu-open]="menuOpen" (mouseleave)="clearLinkState()">
   <a
     class="wordmark"
     routerLink="/"
-    (click)="closeMenu()"
+    (click)="handleLinkClick(); scrollToTop()"
     aria-label="JD Studio home"
     >JD<span>/</span>STUDIO</a
   >
@@ -11,16 +11,16 @@
     [class.nav__links--open]="menuOpen"
     aria-label="Main navigation"
   >
-    <a routerLink="/archive" routerLinkActive="is-active" (click)="closeMenu()"
+    <a routerLink="/archive" routerLinkActive="is-active" (click)="handleLinkClick()"
       >Archive</a
     >
-    <a routerLink="/studio" routerLinkActive="is-active" (click)="closeMenu()"
+    <a routerLink="/studio" routerLinkActive="is-active" (click)="handleLinkClick()"
       >Studio</a
     >
-    <a routerLink="/journal" routerLinkActive="is-active" (click)="closeMenu()"
+    <a routerLink="/journal" routerLinkActive="is-active" (click)="handleLinkClick()"
       >Journal</a
     >
-    <a routerLink="/contact" routerLinkActive="is-active" (click)="closeMenu()"
+    <a routerLink="/contact" routerLinkActive="is-active" (click)="handleLinkClick()"
       >Contact</a
     >
   </nav>
