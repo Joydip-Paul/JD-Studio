@@ -1,7 +1,7 @@
 <main>
   <section class="hero" id="home">
     <div class="hero__grain"></div>
-    <div class="hero__image image-reveal">
+    <div class="hero__image image-reveal" data-cursor="VIEW">
       <img
         src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=2200&q=90"
         alt="Editorial portrait from the JD Studio collection"
@@ -15,9 +15,7 @@
     <div class="hero__title">
       <p class="eyebrow">A DIGITAL FASHION HOUSE <b>·</b> EST. 2018</p>
       <h1>
-        We don't follow<br /><em>trends.</em><br />We create futures<span
-          >.</span
-        >
+        <span>We don't</span><span>follow <em>trends.</em></span><span>We create futures<b>.</b></span>
       </h1>
     </div>
     <div class="hero__footer">
@@ -65,7 +63,7 @@
     </div>
     <div class="collection-grid">
       @for (item of collections; track item.number) {
-        <a class="collection-card" [class]="item.className" routerLink="/archive" [queryParams]="{ collection: item.number }" [attr.aria-label]="'Open ' + item.name + ' collection'">
+        <a class="collection-card" [class]="item.className" [routerLink]="['/collections', item.slug]" [attr.aria-label]="'Open ' + item.name + ' collection'">
           <div class="collection-card__image">
             <img
               [src]="item.image"

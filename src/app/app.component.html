@@ -1,6 +1,6 @@
 <app-loading-screen [visible]="loading" [progress]="loadProgress" />
 
-<div class="cursor" [style.left.px]="cursorX" [style.top.px]="cursorY"></div>
+<app-custom-cursor />
 <div class="site" [class.site--dark]="isDark">
   <div class="page-transition" [class.page-transition--active]="pageTransitioning"></div>
   <app-site-header

@@ -11,6 +11,7 @@ export class HomePageComponent {
   readonly collections = [
     {
       number: '01',
+      slug: 'monochrome-future',
       name: 'MONOCHROME FUTURE',
       type: "WOMEN'S / MEN'S",
       year: 'SS26',
@@ -20,6 +21,7 @@ export class HomePageComponent {
     },
     {
       number: '02',
+      slug: 'matter-form',
       name: 'MATTER / FORM',
       type: "MEN'S COLLECTION",
       year: 'AW25',
@@ -29,6 +31,7 @@ export class HomePageComponent {
     },
     {
       number: '03',
+      slug: 'soft-armour',
       name: 'SOFT ARMOUR',
       type: "WOMEN'S COLLECTION",
       year: 'SS25',
@@ -38,6 +41,7 @@ export class HomePageComponent {
     },
     {
       number: '04',
+      slug: 'object-001',
       name: 'OBJECT 001',
       type: 'LIMITED EDITION',
       year: 'ARCHIVE',

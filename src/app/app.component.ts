@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import gsap from 'gsap';
@@ -6,13 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
+import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoadingScreenComponent, SiteHeaderComponent],
+  imports: [RouterOutlet, LoadingScreenComponent, SiteHeaderComponent, CustomCursorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   encapsulation: ViewEncapsulation.None
@@ -23,8 +24,6 @@ export class AppComponent implements AfterViewInit {
   menuOpen = false;
   loading = true;
   loadProgress = 0;
-  cursorX = 0;
-  cursorY = 0;
   pageTransitioning = false;
   private lenis?: Lenis;
 
@@ -48,10 +47,12 @@ export class AppComponent implements AfterViewInit {
 
         this.scrollToTop();
         window.setTimeout(() => (this.pageTransitioning = false), 220);
+        window.setTimeout(() => this.animatePage(), 60);
       });
   }
 
   ngAfterViewInit(): void {
+    gsap.fromTo('.loader__brand', { y: 28, opacity: 0, letterSpacing: '0.08em' }, { y: 0, opacity: 1, letterSpacing: '-0.1em', duration: 1.1, ease: 'power3.out' });
     const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
     this.lenis = lenis;
     const tick = (time: number): void => {
@@ -59,15 +60,7 @@ export class AppComponent implements AfterViewInit {
       requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
-    gsap.utils.toArray<HTMLElement>('.section-pad, .runway__overlay, .timeline__item').forEach((element) => {
-      gsap.from(element, {
-        y: 32,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: element, start: 'top 82%' }
-      });
-    });
+    this.animatePage();
   }
 
   toggleTheme(): void { this.isDark = !this.isDark; }
@@ -77,9 +70,19 @@ export class AppComponent implements AfterViewInit {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
-  @HostListener('document:mousemove', ['$event'])
-  moveCursor(event: MouseEvent): void {
-    this.cursorX = event.clientX;
-    this.cursorY = event.clientY;
+  private animatePage(): void {
+    gsap.utils.toArray<HTMLElement>('.section-pad, .runway__overlay, .timeline__item, .collection-card, .journal-card, .inner-grid__tile').forEach((element) => {
+      if (element.dataset['motionReady']) return;
+      element.dataset['motionReady'] = 'true';
+      gsap.from(element, {
+        y: 32,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        clearProps: 'transform',
+        scrollTrigger: { trigger: element, start: 'top 86%' }
+      });
+    });
+    ScrollTrigger.refresh();
   }
 }
