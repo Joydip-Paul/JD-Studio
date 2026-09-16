@@ -8,6 +8,7 @@
     [isDark]="isDark"
     (themeChange)="toggleTheme()"
     (menuChange)="menuOpen = $event"
+    (scrollTopRequested)="scrollToTop(true)"
   />
   <router-outlet />
 </div>

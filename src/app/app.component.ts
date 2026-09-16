@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import gsap from 'gsap';
@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './app.component.scss',
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'JD STUDIO';
   isDark = false;
   menuOpen = false;
@@ -26,6 +26,9 @@ export class AppComponent implements AfterViewInit {
   loadProgress = 0;
   pageTransitioning = false;
   private lenis?: Lenis;
+  private readonly lenisTick = (time: number): void => {
+    this.lenis?.raf(time * 1000);
+  };
 
   constructor(private readonly router: Router) {
     const timer = window.setInterval(() => {
@@ -45,7 +48,7 @@ export class AppComponent implements AfterViewInit {
           return;
         }
 
-        this.scrollToTop();
+        this.scrollToTop(false);
         window.setTimeout(() => (this.pageTransitioning = false), 220);
         window.setTimeout(() => this.animatePage(), 60);
       });
@@ -53,21 +56,31 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     gsap.fromTo('.loader__brand', { y: 28, opacity: 0, letterSpacing: '0.08em' }, { y: 0, opacity: 1, letterSpacing: '-0.1em', duration: 1.1, ease: 'power3.out' });
-    const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+    const lenis = new Lenis({
+      autoRaf: false,
+      lerp: 0.1,
+      smoothWheel: true,
+      syncTouch: false,
+      touchMultiplier: 1,
+      wheelMultiplier: 0.9
+    });
     this.lenis = lenis;
-    const tick = (time: number): void => {
-      lenis.raf(time);
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.add(this.lenisTick);
+    lenis.on('scroll', ScrollTrigger.update);
     this.animatePage();
   }
 
   toggleTheme(): void { this.isDark = !this.isDark; }
 
-  scrollToTop(): void {
-    this.lenis?.scrollTo(0, { immediate: true });
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  scrollToTop(smooth = false): void {
+    this.lenis?.scrollTo(0, smooth ? { duration: 0.75, easing: (value: number) => 1 - Math.pow(1 - value, 4) } : { immediate: true });
+    if (!this.lenis) window.scrollTo({ top: 0, left: 0, behavior: smooth ? 'smooth' : 'auto' });
+  }
+
+  ngOnDestroy(): void {
+    gsap.ticker.remove(this.lenisTick);
+    this.lenis?.destroy();
   }
 
   private animatePage(): void {

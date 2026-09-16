@@ -13,6 +13,7 @@ export class SiteHeaderComponent {
   linkClicked = false;
   @Output() menuChange = new EventEmitter<boolean>();
   @Output() themeChange = new EventEmitter<void>();
+  @Output() scrollTopRequested = new EventEmitter<void>();
 
   closeMenu(): void { this.menuChange.emit(false); }
 
@@ -26,6 +27,6 @@ export class SiteHeaderComponent {
   }
 
   scrollToTop(): void {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    this.scrollTopRequested.emit();
   }
 }
