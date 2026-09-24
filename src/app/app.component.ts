@@ -60,7 +60,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       autoRaf: false,
       lerp: 0.1,
       smoothWheel: true,
-      syncTouch: false,
+      syncTouch: true,
+      syncTouchLerp: 0.075,
       touchMultiplier: 1,
       wheelMultiplier: 0.9
     });

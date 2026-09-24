@@ -3,11 +3,13 @@
 }
 html {
     scroll-behavior: auto;
+    overscroll-behavior: none;
 }
 body {
     margin: 0;
     background: #f1eee8;
     font-family: Manrope, sans-serif;
+    overscroll-behavior: none;
 }
 body,
 button {
